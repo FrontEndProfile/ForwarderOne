@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ForwarderOne | Freight forwarding service created by FBA professionals for all FBA business operators</title>
+    <link rel="stylesheet" href="css/sumoselect.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/zeroModal.css">
+    <link rel="stylesheet" href="dist/aos.css">
+    <link rel="stylesheet" href="https://use.typekit.net/twb8mtn.css">
+
+    <link href="dist/hamburgers.css" rel="stylesheet">
+
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/javascript.js" type="text/javascript"></script>
+    <script src="dist/aos.js" type="text/javascript"></script>
+    <script src="js/jquery.sumoselect.min.js"></script>
+    <script src="js/zeroModal.min.js"></script>
+    <script src="js/vue.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLMNB9XHLP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-LLMNB9XHLP');
+    </script>
+    <script src="https://script.tapfiliate.com/tapfiliate.js" type="text/javascript" async></script>
+    <script type="text/javascript">
+        (function (t, a, p) {
+            t.TapfiliateObject = a;
+            t[a] = t[a] || function () {
+                (t[a].q = t[a].q || []).push(arguments)
+            }
+        })(window, 'tap');
+
+        tap('create', '22170-2e9b16', {
+            integration: "javascript"
+        });
+        tap('detect');
+    </script>
+
+    <link rel="icon" type="image/png"
+        href="https://blog.forwarderone.com/wp-content/uploads/2021/03/FHD-1-e1614823544314-150x150.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="google-site-verification" content="S6ntX8Xr5_Z9JrYXmmhHjRvu0pS26jsowgG8tfpdlS0" />
+</head>
+
+<body style="background: #F4F5F7;">
+    <div class="container">
+        <header>
+            <div class="page-grid">
+                <div class="left-side">
+                    <div class="logo-wrap">
+                        <a href="https://www.forwarderone.com"><img src="images/logo.png" id="logo"></a>
+                    </div>
+                </div>
+                <div class="right-side">
+                    <nav class="desktopOnly">
+                        <ul>
+                            <li><a href="https://www.forwarderone.com">Home</a></li>
+                            <li><a href="https://www.forwarderone.com/#Solutions">Solutions</a></li>
+                            <li><a href="cost-calculator.html">Cost Calculator </a></li>
+                            <li><a href="https://blog.forwarderOne.com">Blog</a></li>
+                            <li><a href="https://blog.forwarderone.com/about-us">About Us</a></li>
+                            <li><a href="https://portal.forwarderone.com/person/login/login.html" class="btn"
+                                    id="header-cta"
+                                    style="color:#e68c22;background-color:#ffffff;border:2px solid #e68c22">Login</a>
+                            </li>
+                            <li><a href="https://portal.forwarderone.com/person/login/register.html" class="btn"
+                                    id="header-cta">Register</a></li>
+                        </ul>
+                    </nav>
+                    <nav id="mobileNav">
+                        <div class="hamburger hamburger--collapse">
+                            <div class="hamburger-box">
+                                <div class="hamburger-inner"></div>
+                            </div>
+                        </div>
+                        <ul class="mobileUl">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#Solutions">Technology</a></li>
+                            <li><a href="cost-calculator.html">Cost Calculator</a></li>
+                            <li><a href="https://blog.ForwarderOne.com">Blog</a></li>
+                            <li><a href="https://blog.forwarderone.com/about-us">About Us</a></li>
+                            <li><a href="https://portal.forwarderone.com/person/login/login.html">Login</a></li>
+                            <li><a href="https://portal.forwarderone.com/person/login/register.html"
+                                    class="btn">Register</a></li>
+                        </ul>
+                        <div class="navOverlay"></div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- Section HEADER BANNER Start -->
+        <section class="header-banner">
+            <div class="page-grid" data-aos="fade-up">
+                <h2>Cost Calculator</h2>
+                <p>Find out the estimate cost for your freight forwarding with ForwarderOne.
+                    <br> Just input your cargo information.
+                </p>
+            </div>
+        </section>
+        <!-- Section HEADER BANNER END-->
+        <!-- SECTION CALCULATOR MAIN -->
+        <section class="calculator-main" id="website">
+            <div class="form-wrapper">
+                <div class="page-grid">
+                    <form>
+                        <div class="col-10">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label>Carton Dimensions: CM</label>
+                                    <div class="input-group">
+                                        <input type="number" placeholder="L" v-model="info.carton_length">
+                                        <input type="number" placeholder="W" v-model="info.carton_width">
+                                        <input type="number" placeholder="H" v-model="info.carton_height">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <label>Cartons Weight: KG</label>
+                                    <input type="number" v-model="info.carton_weight">
+                                </div>
+                                <div class="col-4">
+                                    <label>Total Cartons</label>
+                                    <input type="number" v-model="info.cartons">
+                                </div>
+                                <div class="col-4">
+                                    <label>Country</label>
+                                    <div class="relative">
+                                        <select v-model="info.country" class="changeCountry">
+                                            <option v-for="(item,index) in stateList" v-bind:value="item.state">
+                                                {{item.state}}</option>
+                                        </select>
+                                        <img src="images/sort.svg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <label>Select Warehouse</label>
+                                    <div class="relative">
+                                        <select v-model="info.amazon_warehouse_id">
+                                            <option v-for="(item,index) in warehouseList"
+                                                v-if="item.state==info.country" v-bind:value="item.id">
+                                                {{item.warehouse_name}}</option>
+                                        </select>
+                                        <img src="images/sort.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="btn" v-on:click="calculate()">Calculate</button>
+                        </div>
+                    </form>
+
+                    <div class="page-row">
+                        <div class="grid-9">
+                            <div class="card-table" v-if="showList">
+                                <div class="table-holder">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Transit Time</th>
+                                                <th>Shipping Fee</th>
+                                                <th>Custom Duty </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <tr v-for="(item,index) in quoteInfo.methodList">
+                                                <td>{{item.method_name}}</td>
+                                                <td>{{item.transit_time}}</td>
+                                                <td class="text-center" v-if="item.shipping_fee!==''">
+                                                    {{item.shipping_fee}} </td>
+                                                <td v-if="item.shipping_fee!==''">{{item.custom_duty}}</td>
+                                                <td v-if="item.shipping_fee===''" style="border-right: hidden"></td>
+                                                <td v-if="item.shipping_fee===''">{{item.custom_duty}} </td>
+                                            </tr>
+                                            <!--<tr>-->
+                                            <!--<td>Ocean Fast Line</td>-->
+                                            <!--<td>15 - 18 business days</td>-->
+                                            <!--<td colspan="2" class="text-center">$ xxx.xx</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                            <!--<td>Air Freight </td>-->
+                                            <!--<td>7 - 9 business days</td>-->
+                                            <!--<td colspan="2" class="text-center">$ xxx.xx</td>-->
+                                            <!--</tr>-->
+                                            <!--<tr>-->
+                                            <!--<td>Express Air</td>-->
+                                            <!--<td>2 - 3 business days</td>-->
+                                            <!--<td class="text-center">$ xxx.xx </td>-->
+                                            <!--<td>Sign in to get an estimate</td>-->
+                                            <!--</tr>-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row card-sales">
+                                <div class="col-4">
+                                    <div class="card">
+                                        <i><img src="images/snap.svg" alt=""></i>
+                                        <h4>Simple</h4>
+                                        <p>E-commerce business and FBA are already complex enough. You deserve a simple
+                                            price structure when it comes to freight forwarding.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card">
+                                        <i><img src="images/opacity.svg" alt=""></i>
+                                        <h4>Transparent</h4>
+                                        <p>We focus on long-term relationship and value creation. Our transparent
+                                            pricing with “0” hidden cost help you reduce uncertainty.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card">
+                                        <i><img src="images/wallet.svg" alt=""></i>
+                                        <h4>Affordable</h4>
+                                        <p>We deliver more for less. We keep our price structure competitive and do not
+                                            compromise our service level. Get a free quote by signing up.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-3" v-if="showList">
+                            <div class="card-cargo">
+                                <h4>Your Cargo:</h4>
+                                <div class="card-body">
+                                    <p>MEAS: <span>{{quoteInfo.info.total_volume}} cbm</span></p>
+                                    <p>Total Gross Weight: <span>{{quoteInfo.info.total_weight}} kg</span></p>
+                                    <p>Number of Cartons: <span> {{quoteInfo.info.cartons}} pcs</span></p>
+                                    <h5>To know your exact quotation cost breakdown and more details.</h5>
+                                    <a class="btn"
+                                        href="https://portal.forwarderone.com/person/login/register.html">Sign up <img
+                                            src="images/right-arrow.svg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- SECTION CALCULATOR END-->
+        <!-- SECTION TLKING ABOUT START -->
+        <section class="talking-about">
+            <div class="page-grid">
+                <h2>Do you want to have high certainty for your supply chain?</h2>
+                <!--<p>Experience the speed and efficiency of a network that fulfills thousands of orders daily across multiple channels</p>-->
+                <div class="text-center" style="margin-top: 30px;">
+                    <a href="#" class="btn">Get Started</a>
+                    <!--<br>-->
+                    <!--<a href="#">Need more info? Let's chat!</a>-->
+                </div>
+
+            </div>
+        </section>
+        <!-- SECTION TLKING ABOUT END-->
+        <footer>
+            <div class="footerLogo">
+                <a href="#"><img src="images/logoFooter.png"></a>
+            </div>
+
+            <div class="footerText">
+                <p>Copyright©2021 All Rights Reserved by ForwarderOne FBA Logistics Ltd. | <a
+                        href="mailto:service@forwarderone.com"
+                        style="color: white; text-decoration: none;">service@forwarderone.com</a> |
+                </p>
+                <a href="https://www.facebook.com/ForwarderOne" target="_black"><img src="images/fb.png"></a>
+            </div>
+
+            <div class="footerCredit">
+
+            </div>
+        </footer>
+    </div>
+
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#website',
+            data: {
+                urlPrefix: 'https://portal.forwarderone.com',
+                stateList: [],
+                warehouseList: [],
+                info: {
+                    carton_length: '',
+                    carton_width: '',
+                    carton_height: '',
+                    carton_weight: '',
+                    cartons: '',
+                    country: '',
+                    amazon_warehouse_id: '',
+                    token: ''
+                },
+                quoteInfo: {
+                    info: {
+                        total_weight: 0,
+                        total_volume: 0,
+                        cartons: 0,
+                    },
+                    methodList: []
+                },
+                showList: false
+            },
+            created: function () {
+                this.initAmazonWarehouse()
+            },
+            methods: {
+                initAmazonWarehouse: function () {
+                    var self = this;
+                    $.ajax({
+                        url: this.urlPrefix + "/api/Common/getAmazonWarehouse",
+                        type: 'get',
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data.code == 0) {
+                                self.stateList = data.data.stateList
+                                self.warehouseList = data.data.warehouseList
+                                self.info.token = data.data.token
+                            }
+                        },
+                        error: function (xhr, errorType, error) {
+
+                        }
+                    });
+                },
+                calculate: function () {
+                    var self = this;
+                    $.ajax({
+                        url: this.urlPrefix + "/api/Quote/websiteInquiry",
+                        type: 'post',
+                        data: this.info,
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data.code == 0) {
+                                self.showList = true
+                                self.quoteInfo = data.data
+                            } else {
+                                zeroModal.error({
+                                    content: data.msg,
+                                    buttons: [{
+                                        className: 'zeromodal-btn zeromodal-btn-default',
+                                        name: 'Cancel',
+                                        fn: function (opt) {}
+                                    }]
+                                });
+                            }
+                        },
+                        error: function (xhr, errorType, error) {
+
+                        }
+                    });
+                },
+                reload: function () {
+                    this.$forceUpdate();
+                }
+            },
+            watch: {
+                info: {
+                    handler: function (val, oldval) {
+                        console.info(JSON.stringify(this.info))
+                    },
+                    deep: true,
+                },
+            }
+        });
+
+        var initChangeCountry = function () {
+            $(".changeCountry").on('change', function () {
+                vm.info.amazon_warehouse_id = "";
+                vm.reload();
+            })
+        };
+        $(function () {
+            initChangeCountry();
+        });
+    </script>
+
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 1000
+        });
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        $.getScript(gaJsHost + "google-analytics.com/ga.js", function () {
+            try {
+                var pageTracker = _gat._getTracker("UA-180230366-1");
+                pageTracker._trackPageview();
+            } catch (err) {}
+        });
+        $('.SlectBox').SumoSelect({
+            csvDispCount: 2,
+        });
+    </script>
+
+</body>

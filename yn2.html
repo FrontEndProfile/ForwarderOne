@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字左右滚动</title>
+</head>
+<style>
+    * {
+        padding:0;
+        margin:0;
+        font-family:"微软雅黑";
+    }
+    li {
+        list-style:none;
+    }
+    a {
+        text-decoration:none;
+    }
+    .box {
+        padding-left:50px;
+        margin-top:100px;
+        margin-left:100px;
+    }
+    .Box {
+        height:40px;
+        overflow:hidden;
+        position:relative;
+        background:pink;
+    }
+    .scroll {
+        position:absolute;
+        left:0 ;
+        top:0 ;
+    }
+    .scroll li {
+        float:left;
+        line-height:40px;
+        text-align:center;
+    }
+
+</style>
+<body>
+<div class="box">
+    <div class="Box" style="width: 100%">
+        <ul class="scroll" style="width: 100%">
+            <li><a href="#">这里是test2 div的内容 高度我设置了2000px，目的是为了撑开容器，以展示滚动条，这里不一定是div，也可以是其他的标签内容把需要使用滚动条的内容写在 &lt;el-scrollbar&gt;&lt;/el-scrollbar&gt;里面就可以了</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function() {
+        var num = 0;
+        function goLeft() {
+            if (num == -800) {//120是根据你给的尺寸，可变的
+                num = 0;
+            }
+            num -= 1;
+            $(".scroll").css({
+                left: num
+            })
+        }
+        //滚动速度
+        var timer = setInterval(goLeft, 10);
+        //鼠标经过时滚动停止
+        $(".box").hover(function() {
+                clearInterval(timer);
+            },
+            function() {
+                timer = setInterval(goLeft, 10);
+            })
+    })
+</script>
+</html>
