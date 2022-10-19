@@ -1798,7 +1798,8 @@ footer .footerText img {
 }
 .modes-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  grid-column-gap: 35px;
 }
 .modes-card {
   max-width: 270px;
@@ -1815,6 +1816,12 @@ footer .footerText img {
   width: 100%;
   height: 180px;
   background: #e9f8f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modes-image-bar img {
+  width: 50%;
 }
 .modes-content-bar {
   padding: 20px 13px;
@@ -2123,7 +2130,7 @@ footer .footerText img {
     width: 45%;
 }
 .work_hero {
-    min-height: 200vh;
+    min-height: 100vh;
     background: #000000;
     color: white;
     padding-top: 120px;
@@ -2387,6 +2394,9 @@ line-height: 1.4;
   font-weight: 400;
   letter-spacing: -0.04em;
   color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .loyalty_content {
   margin: auto;
@@ -2452,17 +2462,104 @@ line-height: 1.4;
   justify-content: space-between;
 }
 .next_gen_card {
-  height: 200px;
-  border: 1px solid #000;
+  min-height: 100%;
+  border: 1px solid rgb(166, 166, 166);
   border-radius: 22px;
-  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  padding: 30px 20px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+}
+.next_gen_card_content_tittle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+
+  white-space: nowrap; 
+  width: 90%; 
   overflow: hidden;
+  text-overflow: ellipsis; 
+}
+.next_gen_card_img {
+  min-width: 150px;
+  height: 150px;
+  background: #e68b2213;
+  margin-right: 10px;
+  border-radius: 20px;
+}
+.next_gen_card_content_text {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 0;
+
+
+
+}
+.next_gen_row {
+  display: flex;
+  justify-content: space-between;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  flex-wrap: wrap;
+}
+.next_gen_tittle {
+  margin: 20px 40px;
+  font-size: 33px;
+  font-weight: bold;
+  color: #000000;
+
+
+}
+.next_gen {
+  padding-block: 30px;
 }
 
-.next_gen_card_img {
-  width: 300px;
+.work_hero .page-grid {
+  position: relative;
+}
+.icon_one {
+  min-width: 150px;
+  max-width: 150px;
+  object-fit: contain;
   height: 100%;
-  background: red;
+  scale: 1 !important;
+}
+.icon_two {
+  object-fit: contain;
+  position: absolute;
+  left: 199px;
+  top: auto;
+  right: 10px;
+  bottom: 0px;
+  width: 60px;
+}
+.icon_one {
+	position: absolute;
+	left: -50px;
+	top: -120px;
+	right: auto;
+	bottom: auto;
+	width: 130px;
+  z-index: -1;
+}
+.icon_three {
+  position: absolute;
+  left: auto;
+  top: -10px;
+  right: 8px;
+  bottom: auto;
+  width: 80px;
+}
+.icon_four {
+  position: absolute;
+  left: auto;
+  top: auto;
+  right: 0px;
+  bottom: 100px;
+  width: 80px;
+  
 }
 @media (max-width: 1200px) {
   .modes-card {
@@ -2533,6 +2630,16 @@ line-height: 1.4;
 .work_hero_tittle {
 	font-size: 80px;
 	line-height: 1;
+}
+ .next_gen_row {
+  justify-content: center;
+ }
+ .next_gen_tittle {
+  text-align: center;
+ }
+ .next_gen_card {
+	width: 55%;
+	padding: 25px 22px;
 }
 }
 @media (max-width: 1025px) {
@@ -2618,6 +2725,82 @@ line-height: 1.4;
 .service_card_img {
   margin-bottom: 15px;
 }
+ .next_gen_card {
+  width: 88%;
+ }
+
+ .fba_control_checks {
+	width: 70%;
+ }
+ .count_project_row {
+	flex-wrap: wrap;
+  justify-content: center;
+  
+}
+.count_project_animate {
+  min-width: 100%;
+  margin-bottom: 20px;
+}
+.count_project_animate_number.one span {
+  margin: 0;
+}
+.loyalty_tittle {
+	margin-bottom: 18px;
+	font-size: 62px;
+}
+.loyalty {
+	display: flex;
+	overflow: hidden;
+	width: 100%;
+	height: fit-content;
+	margin-top: 30px;
+	padding-block: 150px;
+}
+
+
+.icon_one {
+	position: absolute;
+	left: -30px;
+	top: 20px;
+	right: auto;
+	bottom: auto;
+	width: 30px;
+	z-index: -1;
+	height: 110px;
+}
+.icon_three {
+	position: absolute;
+	left: auto;
+	top: -20px;
+	right: 17px;
+	bottom: auto;
+	width: 60px;
+	z-index: -1;
+}
+.icon_two {
+	object-fit: contain;
+	position: absolute;
+	left: 199px;
+	top: auto;
+	right: -30px;
+	bottom: 55px;
+	width: 50px;
+	z-index: -1;
+
+}
+.icon_four {
+	position: absolute;
+	left: auto;
+	top: auto;
+	right: 60px;
+	bottom: 50px;
+	width: 55px;
+	z-index: -1;
+
+}
+.work_hero {
+	min-height: fit-content;
+}
 
 }
 @media (max-width: 767px) {
@@ -2674,7 +2857,36 @@ line-height: 1.4;
       margin-bottom: 25px;
     }
 
-
+    .fba_control_checks {
+      width: 100%;
+     }
+     .count_project_animate_number.one span {
+      width: 120px;
+    }
+    .count_project_animate_number span {
+      font-size: 46px;
+    }
+    .count_project_tittle {
+      font-size: 33px;
+      margin-bottom: 8px;
+    }
+    .count_project_animate_number.three span {
+      width: 60px;
+    }
+    .loyalty_tittle {
+      margin-bottom: 15px;
+      font-size: 52px;
+    }
+    .loyalty_content {
+      margin-bottom: 20px;
+      font-size: 20px;
+      line-height: 1.1em;
+      font-weight: 400;
+      text-align: center;
+    }
+    .loyalty {
+      padding-block: 100px;
+    }
 }
 @media (max-width: 575px) {
   .news-interests {
@@ -2699,5 +2911,32 @@ line-height: 1.4;
   }
   .ready_ship_text {
 	font-size: 60px;
+  }
+  .next_gen_card {
+    flex-direction: column;
+  }
+  .next_gen_card_img {
+    margin-bottom: 10px;
+  }
+  .control_checks_layout {
+    flex-wrap: wrap;
+  }
+  .fba_control_tittle br {
+    display: none;
+  }
+  .next_gen_tittle {
+    margin: 10px 25px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+  }
+  .next_gen_card_img {
+    margin-right: 0;
+  }
+  .icon_two {
+    left: 35px;
+    right: -30px;
+    bottom: 25px;
+    width: 50px;
   }
 }

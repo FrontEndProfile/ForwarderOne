@@ -1,3 +1,4 @@
+
 $( document ).ready(function() {
 	$('.hamburger').click(function(){
 
@@ -58,4 +59,31 @@ $(window).scroll(function() {
 	  a = 1;
 	}
   
-  });
+});
+
+//ES6 import
+var image = document.getElementsByClassName('icon_one');
+new simpleParallax(image, {
+	orientation: 'down right',
+	overflow: true,
+	delay: .6,
+});
+var image = document.getElementsByClassName('icon_two');
+new simpleParallax(image, {
+	orientation: 'down right',
+	overflow: true,
+	delay: .6,
+});
+var image = document.getElementsByClassName('icon_three');
+new simpleParallax(image, {
+	orientation: 'down left',
+	overflow: true,
+	delay: .3,
+	transition: 'cubic-bezier(0,0,0,1)'
+});
+var image = document.getElementsByClassName('icon_four');
+new simpleParallax(image, {
+	orientation: 'top left',
+	overflow: true,
+	delay: .6,
+});
